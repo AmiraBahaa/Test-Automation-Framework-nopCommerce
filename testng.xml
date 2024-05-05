@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="nopcommerce regression suit">
+    <parameter name="browser" value="firefox"></parameter>
+    <test name="Regression Test">
+        <classes>
+          <!--  <class name="tests.UserRegisterationTest"/> -->
+            <class name="tests.UserRegisterationTest"/>
+
+            <class name="tests.LoginTest"/>
+            <class name="tests.MyAccountTest"/>
+
+            <!-- Add more test classes if needed -->
+        </classes>
+    </test>
+</suite>
