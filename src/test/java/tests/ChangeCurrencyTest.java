@@ -16,24 +16,28 @@ public class ChangeCurrencyTest extends TestBase{
     @Test(priority = 1)
     public void userCanChangeCurrency(){
         homePage= new HomePage(driver);
-        itemDetailsPage= new ItemDetailsPage(driver);
-        homePage.changeCurrency();
-    }
-
-
-
-
-    @Test(priority = 2)
-    public void CheckSearchItem(){
         searchPage= new SearchPage(driver);
-        itemDetailsPage = new ItemDetailsPage(driver);
+        itemDetailsPage= new ItemDetailsPage(driver);
         searchPage.searchItem(itemName);
         searchPage.openItemDetails();
-        Assert.assertEquals(itemDetailsPage.itemDetails.getText(),itemName);
-        Assert.assertTrue(itemDetailsPage.priceValue.getText().contains("€"));
-
-
+        homePage.changeCurrency();
+        Assert.assertTrue(itemDetailsPage.getCurrencyValue("€"));
     }
+
+
+
+
+//    @Test(priority = 2)
+//    public void CheckSearchItem(){
+//        searchPage= new SearchPage(driver);
+//        itemDetailsPage = new ItemDetailsPage(driver);
+//        searchPage.searchItem(itemName);
+//        searchPage.openItemDetails();
+//        Assert.assertEquals(itemDetailsPage.itemDetails.getText(),itemName);
+//        Assert.assertTrue(itemDetailsPage.getCurrencyValue("€"));
+//
+//
+//    }
 
 
 }

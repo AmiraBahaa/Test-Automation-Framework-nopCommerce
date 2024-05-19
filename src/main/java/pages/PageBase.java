@@ -46,6 +46,12 @@ public class PageBase  {
 
     }
 
+    protected Boolean waitItemTextChanged(WebElement element, String partialText){
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        return wait.until(ExpectedConditions.textToBePresentInElement(element, partialText));
+    }
+
+
     protected void scrollToBottom(){
         js.executeScript("scrollBy(0,2500)");
     }

@@ -38,6 +38,11 @@ public class UserRegisterationPage extends PageBase{
     @FindBy(css ="div.result")
     public WebElement registerationMessage;
 
+    @FindBy(linkText = "Log out")
+
+    public  WebElement logoutButton;
+
+
 
     public void  registeration(String firstname, String lastname, String email, String password ){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -52,6 +57,11 @@ public class UserRegisterationPage extends PageBase{
         clickElement(registerButtonReady);
     }
 
+
+    public void logOut(){
+        WebElement logoutButtonReady = waitUntilItemIsClickable(logoutButton);
+        clickElement(logoutButtonReady);
+    }
 
 
 }

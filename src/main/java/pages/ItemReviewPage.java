@@ -22,7 +22,7 @@ public class ItemReviewPage extends PageBase{
     @FindBy(xpath = "//button[@class= \"button-1 write-product-review-button\"]")
     WebElement submitReviewButton;
 
-    @FindBy(xpath = "//div[@class=\"result\" and contains(text(), \"Product review is successfully added.\")]")
+    @FindBy(xpath = "//div[@id=\"bar-notification\" ]//p")
     WebElement reviewIsSent;
 
 

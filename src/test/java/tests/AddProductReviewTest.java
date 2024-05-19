@@ -14,7 +14,7 @@ public class AddProductReviewTest extends TestBase{
 ItemDetailsPage itemDetailsPage;
 ItemReviewPage itemReviewPage;
 
-    String userEmail = "amirabahaa5552@gmail.com";
+    String userEmail = "amirabahaa2@gmail.com";
     String password= "185cmcmc";
 
     HomePage homePage ;
@@ -32,6 +32,18 @@ ItemReviewPage itemReviewPage;
     //user registeration
 
 
+//    @Test(priority = 1)
+//    public void UserSuccessfullyRegistered(){
+//        homePage = new HomePage(driver);
+//        homePage.openRegisterPage();
+//        userRegisterationPage = new UserRegisterationPage(driver);
+//        userRegisterationPage.registeration("Amira", "Bahaa", userEmail, password);
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//        WebElement registerationMessageReady = wait.until(ExpectedConditions.visibilityOf(userRegisterationPage.registerationMessage));
+//        Assert.assertTrue(registerationMessageReady.getText().contains("Your registration completed"));
+//    }
+
+
     @Test(priority = 1)
     public void UserSuccessfullyRegistered(){
         homePage = new HomePage(driver);
@@ -41,6 +53,8 @@ ItemReviewPage itemReviewPage;
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement registerationMessageReady = wait.until(ExpectedConditions.visibilityOf(userRegisterationPage.registerationMessage));
         Assert.assertTrue(registerationMessageReady.getText().contains("Your registration completed"));
+
+        userRegisterationPage.logOut();
     }
 
     @Test(priority = 2)
@@ -71,7 +85,7 @@ ItemReviewPage itemReviewPage;
         itemDetailsPage= new ItemDetailsPage(driver);
         itemReviewPage = new ItemReviewPage(driver);
         itemDetailsPage.openItemReviewPage();
-        itemReviewPage.submitReview("Laptop Riview", "That's an amazing laptop");
+        itemReviewPage.submitReview("Laptop Review", "That's an amazing laptop");
         Assert.assertTrue(itemReviewPage.riviewItemIsSent().isDisplayed());
 
 

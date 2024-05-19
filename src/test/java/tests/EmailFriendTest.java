@@ -11,9 +11,9 @@ import java.time.Duration;
 
 public class EmailFriendTest extends TestBase{
 
-    String userEmail = "amirabahaa52@gmail.com";
-    String password= "185cmcmc";
-    String friendEmail = "amirabahaa@yahoo.com";
+    String userEmail = "amirabahaa2@gmail.com";
+    String password= "185cmkcmc";
+    String friendEmail = "amirabahaa22@yahoo.com";
     String message = "hello this is your favorite item ";
 
     HomePage homePage ;
@@ -41,6 +41,8 @@ public class EmailFriendTest extends TestBase{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement registerationMessageReady = wait.until(ExpectedConditions.visibilityOf(userRegisterationPage.registerationMessage));
         Assert.assertTrue(registerationMessageReady.getText().contains("Your registration completed"));
+
+        userRegisterationPage.logOut();
     }
 
     @Test(priority = 2)

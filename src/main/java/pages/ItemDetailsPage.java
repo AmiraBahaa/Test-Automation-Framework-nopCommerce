@@ -34,4 +34,9 @@ public class ItemDetailsPage extends PageBase{
         clickElement(waitUntilItemIsClickable(addYourReviewLink));
     }
 
+    public boolean getCurrencyValue(String currency){
+        return waitItemTextChanged(priceValue, currency);
+
+    }
+
 }
